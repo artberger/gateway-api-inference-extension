@@ -26,6 +26,34 @@ plugins:
   - macros:
       j2_line_comment_prefix: "#$"
   - mermaid2
+  - spellcheck:
+      backends:
+      - symspellpy
+      - codespell:
+          dictionaries: [clear, rare, en-GB_to_en-US]
+      # known_words can also be a list of words
+      known_words: known_words.txt
+      # ignore words in <code> tags
+      ignore_code: yes
+      # minimum length of words to consider
+      min_length: 2
+      # maximum number of capital letters in a word
+      max_capital: 1
+      # keep unicode characters
+      allow_unicode: no
+      # skip all directories except docs and site-src
+      skip_files:
+      - api/*
+      - client-go/*
+      - cmd/*
+      - config/*
+      - hack/*
+      - internal/*
+      - pkg/*
+      - test/*
+      - tools/*
+      # whether to only check in strict mode
+      strict_only: no
 markdown_extensions:
   - admonition
   - meta
@@ -48,9 +76,9 @@ nav:
   - Overview:
     - Introduction: index.md
     - Concepts:
-        API Overview: concepts/api-overview.md
-        Conformance: concepts/conformance.md
-        Roles and Personas: concepts/roles-and-personas.md
+      - API Overview: concepts/api-overview.md
+      - Conformance: concepts/conformance.md
+      - Roles and Personas: concepts/roles-and-personas.md
     - Implementations: implementations.md
     - FAQ: faq.md
   - Guides:
@@ -68,3 +96,4 @@ nav:
   - Contributing:
     - How to Get Involved: contributing/index.md
     - Developer Guide: contributing/devguide.md
+    - Docs Guide: contributing/docs.md
