@@ -48,9 +48,9 @@ nav:
   - Overview:
     - Introduction: index.md
     - Concepts:
-        API Overview: concepts/api-overview.md
-        Conformance: concepts/conformance.md
-        Roles and Personas: concepts/roles-and-personas.md
+      - API Overview: concepts/api-overview.md
+      - Conformance: concepts/conformance.md
+      - Roles and Personas: concepts/roles-and-personas.md
     - Implementations: implementations.md
     - FAQ: faq.md
   - Guides:
@@ -69,3 +69,4 @@ nav:
   - Contributing:
     - How to Get Involved: contributing/index.md
     - Developer Guide: contributing/devguide.md
+    - Docs Guide: contributing/docs.md
