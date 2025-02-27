@@ -64,3 +64,11 @@ make build-docs-netlify
 ```
 
 The Gateway API Inference Extension team will publish the docs based on the latest changes in the `main` branch.
+
+## Style guides
+
+Refer to the following style guides for more guidance.
+
+* [Gateway API style guide](https://gateway-api.sigs.k8s.io/contributing/style-guide/)
+* [Kubernetes style guide](https://kubernetes.io/docs/contribute/style/style-guide/)
+* For spelling, [Merriam-Webster](https://www.merriam-webster.com/)

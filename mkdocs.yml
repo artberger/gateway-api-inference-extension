@@ -41,12 +41,13 @@ plugins:
       max_capital: 1
       # keep unicode characters
       allow_unicode: no
-      # skip all directories except docs and site-src
+      # skip all directories except site-src
       skip_files:
       - api/*
       - client-go/*
       - cmd/*
       - config/*
+      - docs/*
       - hack/*
       - internal/*
       - pkg/*
