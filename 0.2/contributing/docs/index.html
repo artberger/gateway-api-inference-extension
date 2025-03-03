@@ -491,36 +491,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mkdocs">
-<span class="md-ellipsis">
-      mkdocs
-    </span>
-</a>
-<nav aria-label="mkdocs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#before-you-begin">
-<span class="md-ellipsis">
-      Before you begin
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#set-up-mkdocs">
-<span class="md-ellipsis">
-      Set up mkdocs
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#preview-local-changes">
 <span class="md-ellipsis">
       Preview local changes
     </span>
 </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#style-guides">
+<span class="md-ellipsis">
+      Style guides
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#version-the-docs">
@@ -528,6 +510,31 @@
       Version the docs
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-features-like-plug-ins">
+<span class="md-ellipsis">
+      Add MkDocs features like plug-ins
+    </span>
+</a>
+<nav aria-label="Add MkDocs features like plug-ins" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-your-local-docs-dev-environment">
+<span class="md-ellipsis">
+      Set up your local docs dev environment
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-plugins">
+<span class="md-ellipsis">
+      Add MkDocs plugins
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#publish-the-docs">
@@ -557,36 +564,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mkdocs">
-<span class="md-ellipsis">
-      mkdocs
-    </span>
-</a>
-<nav aria-label="mkdocs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#before-you-begin">
-<span class="md-ellipsis">
-      Before you begin
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#set-up-mkdocs">
-<span class="md-ellipsis">
-      Set up mkdocs
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#preview-local-changes">
 <span class="md-ellipsis">
       Preview local changes
     </span>
 </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#style-guides">
+<span class="md-ellipsis">
+      Style guides
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#version-the-docs">
@@ -594,6 +583,31 @@
       Version the docs
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-features-like-plug-ins">
+<span class="md-ellipsis">
+      Add MkDocs features like plug-ins
+    </span>
+</a>
+<nav aria-label="Add MkDocs features like plug-ins" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-your-local-docs-dev-environment">
+<span class="md-ellipsis">
+      Set up your local docs dev environment
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-plugins">
+<span class="md-ellipsis">
+      Add MkDocs plugins
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#publish-the-docs">
@@ -610,48 +624,126 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="contributing-to-the-docs">Contributing to the docs<a class="headerlink" href="#contributing-to-the-docs" title="Permanent link">¶</a></h1>
-<h2 id="mkdocs">mkdocs<a class="headerlink" href="#mkdocs" title="Permanent link">¶</a></h2>
-<p>This doc site is built using MkDocs.</p>
-<p>To install and use <code>mkdocs</code>, refer to the <a href="https://www.mkdocs.org/user-guide/">MkDocs User Guide</a>.</p>
-<h3 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">¶</a></h3>
-<p>Make sure that you have a recent version of <code>python</code> and <code>pip</code>.</p>
-<p>You also might want to set up a Python virtual environment for the <code>gateway-api-inference-extension</code> project.</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.venvs/gateway-api-inference-extension
-<span class="nb">source</span><span class="w"> </span>~/.venvs/gateway-api-inference-extension/bin/activate
+<p>This doc site is built using MkDocs. It includes a Docker image for you to preview local changes without needing to set up MkDocs and its related plug-ins.</p>
+<h2 id="preview-local-changes">Preview local changes<a class="headerlink" href="#preview-local-changes" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>In the <code>site-src</code> directory, make your changes to the Markdown files.</p>
+</li>
+<li>
+<p>If you add a new page, make sure to update the <code>nav</code> section in the <code>mkdocs.yml</code> file.</p>
+</li>
+<li>
+<p>From the root directory of this project, run the Docker image with the following command from the <code>Makefile</code>.
+   <div class="highlight"><pre><span></span><code>make<span class="w"> </span>live-docs
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="style-guides">Style guides<a class="headerlink" href="#style-guides" title="Permanent link">¶</a></h2>
+<p>Refer to the following style guides:</p>
+<ul>
+<li><a href="https://gateway-api.sigs.k8s.io/contributing/style-guide/">Gateway API</a></li>
+<li><a href="https://kubernetes.io/docs/contribute/style/style-guide/">Kubernetes</a></li>
+</ul>
+<p>If you need guidance on specific words that are not covered in one of those style guides, check a common cloud provider, such as <a href="https://developers.google.com/style">Google developer docs</a>.</p>
+<h2 id="version-the-docs">Version the docs<a class="headerlink" href="#version-the-docs" title="Permanent link">¶</a></h2>
+<p>The Material theme uses <code>mike</code> to version the docs. The following steps cover common workflows for versioning. For more information, see the following resources:</p>
+<ul>
+<li><a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/">Material theme versioning page</a></li>
+<li><a href="https://github.com/jimporter/mike"><code>mike</code> readme</a></li>
+</ul>
+<p>Example workflow for using <code>mike</code>:</p>
+<ol>
+<li>
+<p>List the current versions. Aliases are included in brackets.
+   <div class="highlight"><pre><span></span><code>mike<span class="w"> </span>list
+
+<span class="c1"># Example output</span>
+<span class="m">0</span>.3<span class="w"> </span><span class="o">[</span>main<span class="o">]</span>
+<span class="m">0</span>.2<span class="w"> </span><span class="o">[</span>latest<span class="o">]</span>
+<span class="m">0</span>.1
+</code></pre></div></p>
+</li>
+<li>
+<p>In the <code>site-src</code> directory, make and save your doc changes.</p>
+</li>
+<li>
+<p>Add the changes to the versions that you want to publish them in. The following example adds the changes to both the latest 0.2 and 0.3 main versions.<br/>
+<div class="highlight"><pre><span></span><code>mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>main
+mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>latest
+</code></pre></div></p>
+</li>
+<li>
+<p>Optional: Add a new version of the docs. The following example adds a new version 0.4 as main based on the current content, renames 0.3 to latest with the current content, removes the latest alias from 0.2 but leaves the version content untouched, and deletes version 0.1.
+   <div class="highlight"><pre><span></span><code>mike<span class="w"> </span>delete<span class="w"> </span>latest
+mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.4<span class="w"> </span>main
+mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>latest
+mike<span class="w"> </span>delete<span class="w"> </span><span class="m">0</span>.1
+</code></pre></div></p>
+</li>
+</ol>
+<p>The <code>mike</code> commands add each version as a separate commit and directory on the <code>gh-pages</code> branch. 
+* The versioned directories contain the output of the MkDocs build for each version. 
+* The <code>latest</code> and <code>main</code> aliases are copies of the versioned directories.
+* The <code>versions.json</code> file has the information for each version and alias that <code>mike</code> tracks. You can check this if you use </p>
+<p>Example directory structure:</p>
+<div class="highlight"><pre><span></span><code>gh-pages branch
+│── 0.1/
+│── 0.2/
+│── 0.3/
+│── 0.4/
+│── latest/
+│── main/
+│── versions.json
 </code></pre></div>
-<h3 id="set-up-mkdocs">Set up mkdocs<a class="headerlink" href="#set-up-mkdocs" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install mkdocs</span>
+<p>The doc builds then publish the versioned content from this branch to the website.</p>
+<h2 id="add-mkdocs-features-like-plug-ins">Add MkDocs features like plug-ins<a class="headerlink" href="#add-mkdocs-features-like-plug-ins" title="Permanent link">¶</a></h2>
+<p>As you contribute to the Kubernetes Gateway API Inference Extension project, you might want to add features to the MkDocs theme or build process. The following sections explain how to set up a local docs development environment and contribute to the docs build processes.</p>
+<h3 id="set-up-your-local-docs-dev-environment">Set up your local docs dev environment<a class="headerlink" href="#set-up-your-local-docs-dev-environment" title="Permanent link">¶</a></h3>
+<p>To install and use <code>mkdocs</code>, refer to the <a href="https://www.mkdocs.org/user-guide/">MkDocs User Guide</a>.</p>
+<ol>
+<li>
+<p>Make sure that you have a recent version of <code>python</code> and <code>pip</code>.</p>
+</li>
+<li>
+<p>You also might want to set up a Python virtual environment for the <code>gateway-api-inference-extension</code> project.
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.venvs/gateway-api-inference-extension
+<span class="nb">source</span><span class="w"> </span>~/.venvs/gateway-api-inference-extension/bin/activate
+</code></pre></div></p>
+</li>
+<li>
+<p>Install MkDocs with the theme and plugins that this project uses.
+   <div class="highlight"><pre><span></span><code><span class="c1"># Install mkdocs</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs
 
 <span class="c1"># Install the Material theme that this project uses</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
 
 <span class="c1"># Install the plugins that this project uses</span>
+<span class="c1"># For a full list, check the /hack/mkdocs/image/requirements.txt</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-awesome-pages-plugin
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-mermaid2-plugin
+pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material-extensions
+pip<span class="w"> </span>install<span class="w"> </span>mkdocs-redirects
 pip<span class="w"> </span>install<span class="w"> </span>mike
-</code></pre></div>
-<h3 id="preview-local-changes">Preview local changes<a class="headerlink" href="#preview-local-changes" title="Permanent link">¶</a></h3>
-<ol>
-<li>
-<p>Make your changes to the docs. If you add a new page, make sure to update the <code>nav</code> section in the <code>mkdocs.yml</code> file.</p>
-</li>
-<li>
-<p>Serve the docs locally.</p>
-<p><code>mkdocs serve</code></p>
-</li>
-<li>
-<p>Open the local address that the docs are served from in your browser: <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+</code></pre></div></p>
 </li>
 </ol>
-<h2 id="version-the-docs">Version the docs<a class="headerlink" href="#version-the-docs" title="Permanent link">¶</a></h2>
-<p>The Material theme uses <code>mike</code> to version the docs.</p>
-<p>For more information, see the following resources:</p>
-<ul>
-<li><a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/">Material theme versioning page</a></li>
-<li><a href="https://github.com/jimporter/mike">mike readme</a></li>
-</ul>
+<h3 id="add-mkdocs-plugins">Add MkDocs plugins<a class="headerlink" href="#add-mkdocs-plugins" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>Try out the MkDocs plugin that you want to add locally. For more info, see the <a href="https://squidfunk.github.io/mkdocs-material/plugins/">MkDocs Plugin docs</a>.</p>
+</li>
+<li>
+<p>Add the plugin to the <code>/hack/mkdocs/image/requirements.txt</code> file.</p>
+</li>
+<li>
+<p>From the root directory, run the Docker image of the docs. Make sure that the plugin builds and works as you expect.
+   <div class="highlight"><pre><span></span><code>make<span class="w"> </span>live-docs
+</code></pre></div></p>
+</li>
+</ol>
 <h2 id="publish-the-docs">Publish the docs<a class="headerlink" href="#publish-the-docs" title="Permanent link">¶</a></h2>
 <p>The project uses Netlify to host the docs. </p>
 <p>You can locally build the files that become the doc site. For example, you might want to check the HTML output of changes that you make to the site.</p>
