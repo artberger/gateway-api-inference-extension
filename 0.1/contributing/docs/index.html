@@ -8,9 +8,9 @@
 <link href="https://gateway-api-inference-extension.sigs.k8s.io/0.1/contributing/docs/" rel="canonical"/>
 <link href="../devguide/" rel="prev"/>
 <link href="../../images/k8s-favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.5.36" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
 <title>Documentation Guide - Kubernetes Gateway API Inference Extension</title>
-<link href="../../assets/stylesheets/main.06209087.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -31,40 +31,14 @@
 </div>
 <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
 </div>
-<!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-<!-- Determine classes -->
-<!-- Header -->
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<!-- Button to open drawer -->
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
-</label>
-<!-- Link to home -->
 <a aria-label="Kubernetes Gateway API Inference Extension" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Kubernetes Gateway API Inference Extension">
 <img alt="logo" src="../../images/logo/logo-text-large-horizontal-white.png"/>
 </a>
-<!-- Header title -->
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
@@ -81,14 +55,9 @@
 </div>
 </div>
 </div>
-<!-- Color palette toggle -->
-<!-- User preference: color palette -->
-<!-- Site language selector -->
-<!-- Button to open search modal -->
 <label class="md-header__button md-icon" for="__search">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
 </label>
-<!-- Search interface -->
 <div class="md-search" data-md-component="search" role="dialog">
 <label class="md-search__overlay" for="__search"></label>
 <div class="md-search__inner" role="search">
@@ -116,11 +85,10 @@
 </div>
 </div>
 </div>
-<!-- Repository information -->
 <div class="md-header__source">
 <a class="md-source" data-md-component="source" href="https://github.com/kubernetes-sigs/gateway-api-inference-extension" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
 </div>
 <div class="md-source__repository">
     kubernetes-sigs/gateway-api-inference-extension
@@ -128,7 +96,6 @@
 </a>
 </div>
 </nav>
-<!-- Navigation tabs (sticky) -->
 </header>
 <div class="md-container" data-md-component="container">
 <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
@@ -192,7 +159,7 @@
 <div class="md-nav__source">
 <a class="md-source" data-md-component="source" href="https://github.com/kubernetes-sigs/gateway-api-inference-extension" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
 </div>
 <div class="md-source__repository">
     kubernetes-sigs/gateway-api-inference-extension
@@ -205,6 +172,7 @@
 <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
 <span class="md-ellipsis">
     Overview
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -218,6 +186,7 @@
 <a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     Introduction
+    
   </span>
 </a>
 </li>
@@ -226,6 +195,7 @@
 <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
 <span class="md-ellipsis">
     Concepts
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -239,6 +209,7 @@
 <a class="md-nav__link" href="../../concepts/api-overview/">
 <span class="md-ellipsis">
     API Overview
+    
   </span>
 </a>
 </li>
@@ -246,6 +217,7 @@
 <a class="md-nav__link" href="../../concepts/conformance/">
 <span class="md-ellipsis">
     Conformance
+    
   </span>
 </a>
 </li>
@@ -253,6 +225,7 @@
 <a class="md-nav__link" href="../../concepts/roles-and-personas/">
 <span class="md-ellipsis">
     Roles and Personas
+    
   </span>
 </a>
 </li>
@@ -263,6 +236,7 @@
 <a class="md-nav__link" href="../../implementations/">
 <span class="md-ellipsis">
     Implementations
+    
   </span>
 </a>
 </li>
@@ -270,6 +244,7 @@
 <a class="md-nav__link" href="../../faq/">
 <span class="md-ellipsis">
     FAQ
+    
   </span>
 </a>
 </li>
@@ -281,6 +256,7 @@
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
 <span class="md-ellipsis">
     Guides
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -295,6 +271,7 @@
 <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
 <span class="md-ellipsis">
     User Guides
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -308,6 +285,7 @@
 <a class="md-nav__link" href="../../guides/">
 <span class="md-ellipsis">
     Getting started
+    
   </span>
 </a>
 </li>
@@ -315,6 +293,7 @@
 <a class="md-nav__link" href="../../guides/adapter-rollout/">
 <span class="md-ellipsis">
     Adapter Rollout
+    
   </span>
 </a>
 </li>
@@ -322,6 +301,7 @@
 <a class="md-nav__link" href="../../guides/metrics/">
 <span class="md-ellipsis">
     Metrics
+    
   </span>
 </a>
 </li>
@@ -332,6 +312,7 @@
 <a class="md-nav__link" href="../../guides/implementers/">
 <span class="md-ellipsis">
     Implementer's Guide
+    
   </span>
 </a>
 </li>
@@ -343,6 +324,7 @@
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
     Reference
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -356,6 +338,7 @@
 <a class="md-nav__link" href="../../reference/spec/">
 <span class="md-ellipsis">
     API Reference
+    
   </span>
 </a>
 </li>
@@ -364,6 +347,7 @@
 <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
 <span class="md-ellipsis">
     API Types
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -377,6 +361,7 @@
 <a class="md-nav__link" href="../../api-types/inferencepool/">
 <span class="md-ellipsis">
     InferencePool
+    
   </span>
 </a>
 </li>
@@ -384,6 +369,7 @@
 <a class="md-nav__link" href="../../api-types/inferencemodel/">
 <span class="md-ellipsis">
     InferenceModel
+    
   </span>
 </a>
 </li>
@@ -398,6 +384,7 @@
 <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
 <span class="md-ellipsis">
     Enhancements
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -411,6 +398,7 @@
 <a class="md-nav__link" href="../../gieps/overview/">
 <span class="md-ellipsis">
     Overview
+    
   </span>
 </a>
 </li>
@@ -422,6 +410,7 @@
 <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
 <span class="md-ellipsis">
     Contributing
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -435,6 +424,7 @@
 <a class="md-nav__link" href="../">
 <span class="md-ellipsis">
     How to Get Involved
+    
   </span>
 </a>
 </li>
@@ -442,6 +432,7 @@
 <a class="md-nav__link" href="../devguide/">
 <span class="md-ellipsis">
     Developer Guide
+    
   </span>
 </a>
 </li>
@@ -450,12 +441,14 @@
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
     Documentation Guide
+    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Documentation Guide
+    
   </span>
 </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
@@ -465,24 +458,45 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mkdocs">
+<a class="md-nav__link" href="#preview-local-changes">
 <span class="md-ellipsis">
-      mkdocs
-    </span>
-</a>
-<nav aria-label="mkdocs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#set-up-mkdocs">
-<span class="md-ellipsis">
-      Set up mkdocs
+      Preview local changes
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#preview-local-changes">
+<a class="md-nav__link" href="#style-guides">
 <span class="md-ellipsis">
-      Preview local changes
+      Style guides
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version-the-docs">
+<span class="md-ellipsis">
+      Version the docs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-features-like-plug-ins">
+<span class="md-ellipsis">
+      Add MkDocs features like plug-ins
+    </span>
+</a>
+<nav aria-label="Add MkDocs features like plug-ins" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-your-local-docs-dev-environment">
+<span class="md-ellipsis">
+      Set up your local docs dev environment
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-plugins">
+<span class="md-ellipsis">
+      Add MkDocs plugins
     </span>
 </a>
 </li>
@@ -517,24 +531,45 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mkdocs">
+<a class="md-nav__link" href="#preview-local-changes">
 <span class="md-ellipsis">
-      mkdocs
-    </span>
-</a>
-<nav aria-label="mkdocs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#set-up-mkdocs">
-<span class="md-ellipsis">
-      Set up mkdocs
+      Preview local changes
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#preview-local-changes">
+<a class="md-nav__link" href="#style-guides">
 <span class="md-ellipsis">
-      Preview local changes
+      Style guides
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version-the-docs">
+<span class="md-ellipsis">
+      Version the docs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-features-like-plug-ins">
+<span class="md-ellipsis">
+      Add MkDocs features like plug-ins
+    </span>
+</a>
+<nav aria-label="Add MkDocs features like plug-ins" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-your-local-docs-dev-environment">
+<span class="md-ellipsis">
+      Set up your local docs dev environment
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-mkdocs-plugins">
+<span class="md-ellipsis">
+      Add MkDocs plugins
     </span>
 </a>
 </li>
@@ -556,33 +591,124 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="contributing-to-the-docs">Contributing to the docs<a class="headerlink" href="#contributing-to-the-docs" title="Permanent link">¶</a></h1>
-<h2 id="mkdocs">mkdocs<a class="headerlink" href="#mkdocs" title="Permanent link">¶</a></h2>
-<p>This doc site is built using MkDocs.</p>
-<p>Before you begin, make sure that you have a recent version of <code>python</code> and <code>pip</code>. You also might want to set up a Python virtual environment for the <code>gateway-api-inference-extension</code> project.</p>
+<p>This doc site is built using MkDocs. It includes a Docker image for you to preview local changes without needing to set up MkDocs and its related plug-ins.</p>
+<h2 id="preview-local-changes">Preview local changes<a class="headerlink" href="#preview-local-changes" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>In the <code>site-src</code> directory, make your changes to the Markdown files.</p>
+</li>
+<li>
+<p>If you add a new page, make sure to update the <code>nav</code> section in the <code>mkdocs.yml</code> file.</p>
+</li>
+<li>
+<p>From the root directory of this project, run the Docker image with the following command from the <code>Makefile</code>.
+   <div class="highlight"><pre><span></span><code>make<span class="w"> </span>live-docs
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="style-guides">Style guides<a class="headerlink" href="#style-guides" title="Permanent link">¶</a></h2>
+<p>Refer to the following style guides:</p>
+<ul>
+<li><a href="https://gateway-api.sigs.k8s.io/contributing/style-guide/">Gateway API</a></li>
+<li><a href="https://kubernetes.io/docs/contribute/style/style-guide/">Kubernetes</a></li>
+</ul>
+<p>If you need guidance on specific words that are not covered in one of those style guides, check a common cloud provider, such as <a href="https://developers.google.com/style">Google developer docs</a>.</p>
+<h2 id="version-the-docs">Version the docs<a class="headerlink" href="#version-the-docs" title="Permanent link">¶</a></h2>
+<p>The Material theme uses <code>mike</code> to version the docs. The following steps cover common workflows for versioning. For more information, see the following resources:</p>
+<ul>
+<li><a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/">Material theme versioning page</a></li>
+<li><a href="https://github.com/jimporter/mike"><code>mike</code> readme</a></li>
+</ul>
+<p>Example workflow for using <code>mike</code>:</p>
+<ol>
+<li>
+<p>List the current versions. Aliases are included in brackets.
+   <div class="highlight"><pre><span></span><code>mike<span class="w"> </span>list
+
+<span class="c1"># Example output</span>
+<span class="m">0</span>.3<span class="w"> </span><span class="o">[</span>main<span class="o">]</span>
+<span class="m">0</span>.2<span class="w"> </span><span class="o">[</span>latest<span class="o">]</span>
+<span class="m">0</span>.1
+</code></pre></div></p>
+</li>
+<li>
+<p>In the <code>site-src</code> directory, make and save your doc changes.</p>
+</li>
+<li>
+<p>Add the changes to the versions that you want to publish them in. The following example adds the changes to both the latest 0.2 and 0.3 main versions.<br/>
+<div class="highlight"><pre><span></span><code>mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>main
+mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>latest
+</code></pre></div></p>
+</li>
+<li>
+<p>Optional: Add a new version of the docs. The following example adds a new version 0.4 as main based on the current content, renames 0.3 to latest with the current content, removes the latest alias from 0.2 but leaves the version content untouched, and deletes version 0.1.
+   <div class="highlight"><pre><span></span><code>mike<span class="w"> </span>delete<span class="w"> </span>latest
+mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.4<span class="w"> </span>main
+mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>latest
+mike<span class="w"> </span>delete<span class="w"> </span><span class="m">0</span>.1
+</code></pre></div></p>
+</li>
+</ol>
+<p>The <code>mike</code> commands add each version as a separate commit and directory on the <code>gh-pages</code> branch. 
+* The versioned directories contain the output of the MkDocs build for each version. 
+* The <code>latest</code> and <code>main</code> aliases are copies of the versioned directories.
+* The <code>versions.json</code> file has the information for each version and alias that <code>mike</code> tracks. You can check this if you use </p>
+<p>Example directory structure:</p>
+<div class="highlight"><pre><span></span><code>gh-pages branch
+│── 0.1/
+│── 0.2/
+│── 0.3/
+│── 0.4/
+│── latest/
+│── main/
+│── versions.json
+</code></pre></div>
+<p>The doc builds then publish the versioned content from this branch to the website.</p>
+<h2 id="add-mkdocs-features-like-plug-ins">Add MkDocs features like plug-ins<a class="headerlink" href="#add-mkdocs-features-like-plug-ins" title="Permanent link">¶</a></h2>
+<p>As you contribute to the Kubernetes Gateway API Inference Extension project, you might want to add features to the MkDocs theme or build process. The following sections explain how to set up a local docs development environment and contribute to the docs build processes.</p>
+<h3 id="set-up-your-local-docs-dev-environment">Set up your local docs dev environment<a class="headerlink" href="#set-up-your-local-docs-dev-environment" title="Permanent link">¶</a></h3>
 <p>To install and use <code>mkdocs</code>, refer to the <a href="https://www.mkdocs.org/user-guide/">MkDocs User Guide</a>.</p>
-<h3 id="set-up-mkdocs">Set up mkdocs<a class="headerlink" href="#set-up-mkdocs" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install mkdocs</span>
+<ol>
+<li>
+<p>Make sure that you have a recent version of <code>python</code> and <code>pip</code>.</p>
+</li>
+<li>
+<p>You also might want to set up a Python virtual environment for the <code>gateway-api-inference-extension</code> project.
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/.venvs/gateway-api-inference-extension
+<span class="nb">source</span><span class="w"> </span>~/.venvs/gateway-api-inference-extension/bin/activate
+</code></pre></div></p>
+</li>
+<li>
+<p>Install MkDocs with the theme and plugins that this project uses.
+   <div class="highlight"><pre><span></span><code><span class="c1"># Install mkdocs</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs
 
 <span class="c1"># Install the Material theme that this project uses</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
 
 <span class="c1"># Install the plugins that this project uses</span>
+<span class="c1"># For a full list, check the /hack/mkdocs/image/requirements.txt</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-awesome-pages-plugin
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-mermaid2-plugin
-</code></pre></div>
-<h3 id="preview-local-changes">Preview local changes<a class="headerlink" href="#preview-local-changes" title="Permanent link">¶</a></h3>
+pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material-extensions
+pip<span class="w"> </span>install<span class="w"> </span>mkdocs-redirects
+pip<span class="w"> </span>install<span class="w"> </span>mike
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="add-mkdocs-plugins">Add MkDocs plugins<a class="headerlink" href="#add-mkdocs-plugins" title="Permanent link">¶</a></h3>
 <ol>
 <li>
-<p>Make your changes to the docs. If you add a new page, make sure to update the <code>nav</code> section in the <code>mkdocs.yml</code> file.</p>
+<p>Try out the MkDocs plugin that you want to add locally. For more info, see the <a href="https://squidfunk.github.io/mkdocs-material/plugins/">MkDocs Plugin docs</a>.</p>
 </li>
 <li>
-<p>Serve the docs locally.</p>
-<p><code>mkdocs serve</code></p>
+<p>Add the plugin to the <code>/hack/mkdocs/image/requirements.txt</code> file.</p>
 </li>
 <li>
-<p>Open the local address that the docs are served from in your browser: <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>From the root directory, run the Docker image of the docs. Make sure that the plugin builds and works as you expect.
+   <div class="highlight"><pre><span></span><code>make<span class="w"> </span>live-docs
+</code></pre></div></p>
 </li>
 </ol>
 <h2 id="publish-the-docs">Publish the docs<a class="headerlink" href="#publish-the-docs" title="Permanent link">¶</a></h2>
@@ -618,7 +744,7 @@ pip<span class="w"> </span>install<span class="w"> </span>mkdocs-mermaid2-plugin
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
 </body>
 </html>
