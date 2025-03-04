@@ -1,7 +1,11 @@
 /* Hide title in favor of logo */
-/* .md-header__topic {
+.md-header__topic {
     display: none;
-} */
+}
+
+.md-version {
+    display: flex;
+}
 
 /* Use Kubernetes color as primary */
 :root {
