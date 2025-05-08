@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/0.3/concepts/roles-and-personas/">
+        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/0.3/implementations/model-servers/">
       
       
-        <link rel="prev" href="../conformance/">
+        <link rel="prev" href="../gateways/">
       
       
-        <link rel="next" href="../../implementations/gateways/">
+        <link rel="next" href="../../faq/">
       
       
       <link rel="icon" href="../../images/favicon-64.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Roles and Personas - Kubernetes Gateway API Inference Extension</title>
+        <title>Model Servers - Kubernetes Gateway API Inference Extension</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#roles-and-personas" class="md-skip">
+        <a href="#supported-model-servers" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +163,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roles and Personas
+              Model Servers
             
           </span>
         </div>
@@ -484,8 +484,6 @@
                 
   
   
-    
-  
   
   
     
@@ -495,11 +493,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -513,7 +513,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -527,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-overview/" class="md-nav__link">
+      <a href="../../concepts/api-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,11 +548,101 @@
   
   
     <li class="md-nav__item">
-      <a href="../conformance/" class="md-nav__link">
+      <a href="../../concepts/conformance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Conformance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/roles-and-personas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roles and Personas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implementations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Implementations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateways/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gateways
   </span>
   
 
@@ -582,7 +672,7 @@
           
   
   <span class="md-ellipsis">
-    Roles and Personas
+    Model Servers
   </span>
   
 
@@ -593,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    Roles and Personas
+    Model Servers
   </span>
   
 
@@ -615,20 +705,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inference-platform-admin" class="md-nav__link">
+  <a href="#compatible-model-server-versions" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Platform Admin
+      Compatible Model Server Versions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-workload-owner" class="md-nav__link">
+  <a href="#vllm" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Workload Owner
+      vLLM
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triton-with-tensorrt-llm-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with TensorRT-LLM Backend
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triton with TensorRT-LLM Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-use-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Use Helm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-edit-epp-deployment-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Edit EPP deployment yaml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -636,96 +759,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Implementations
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            Implementations
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../implementations/gateways/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Gateways
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../implementations/model-servers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Servers
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1398,20 +1431,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inference-platform-admin" class="md-nav__link">
+  <a href="#compatible-model-server-versions" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Platform Admin
+      Compatible Model Server Versions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-workload-owner" class="md-nav__link">
+  <a href="#vllm" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Workload Owner
+      vLLM
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triton-with-tensorrt-llm-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with TensorRT-LLM Backend
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triton with TensorRT-LLM Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-use-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Use Helm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-edit-epp-deployment-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Edit EPP deployment yaml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1433,29 +1499,53 @@
   
 
 
-<h1 id="roles-and-personas">Roles and Personas<a class="headerlink" href="#roles-and-personas" title="Permanent link">&para;</a></h1>
-<p>Before diving into the details of the API, descriptions of the personas these APIs were designed for will help convey the thought process of the API design.</p>
-<h2 id="inference-platform-admin">Inference Platform Admin<a class="headerlink" href="#inference-platform-admin" title="Permanent link">&para;</a></h2>
-<p>The Inference Platform Admin creates and manages the infrastructure necessary to run LLM workloads, including handling Ops for:</p>
-<ul>
-<li>Hardware</li>
-<li>Model Server</li>
-<li>Base Model</li>
-<li>Resource Allocation for Workloads</li>
-<li>Gateway configuration</li>
-<li>etc</li>
-</ul>
-<h2 id="inference-workload-owner">Inference Workload Owner<a class="headerlink" href="#inference-workload-owner" title="Permanent link">&para;</a></h2>
-<p>An Inference Workload Owner persona owns and manages one or many Generative AI Workloads (LLM focused <em>currently</em>). This includes:</p>
-<ul>
-<li>Defining criticality</li>
-<li>Managing fine-tunes</li>
-<li>LoRA Adapters</li>
-<li>System Prompts</li>
-<li>Prompt Cache</li>
-<li>etc.</li>
-<li>Managing rollout of adapters</li>
-</ul>
+<h1 id="supported-model-servers">Supported Model Servers<a class="headerlink" href="#supported-model-servers" title="Permanent link">&para;</a></h1>
+<p>Any model server that conform to the <a href="https://github.com/kubernetes-sigs/gateway-api-inference-extension/tree/main/docs/proposals/003-model-server-protocol">model server protocol</a> are supported by the inference extension.</p>
+<h2 id="compatible-model-server-versions">Compatible Model Server Versions<a class="headerlink" href="#compatible-model-server-versions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Model Server</th>
+<th>Version</th>
+<th>Commit</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vLLM V0</td>
+<td>v0.6.4 and above</td>
+<td><a href="https://github.com/vllm-project/vllm/commit/0ad216f5750742115c686723bf38698372d483fd">commit 0ad216f</a></td>
+<td></td>
+</tr>
+<tr>
+<td>vLLM V1</td>
+<td>v0.8.0 and above</td>
+<td><a href="https://github.com/vllm-project/vllm/commit/bc32bc73aad076849ac88565cff745b01b17d89c">commit bc32bc7</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Triton(TensorRT-LLM)</td>
+<td><a href="https://docs.nvidia.com/deeplearning/triton-inference-server/release-notes/rel-25-03.html#rel-25-03">25.03</a> and above</td>
+<td><a href="https://github.com/triton-inference-server/tensorrtllm_backend/commit/15cb989b00523d8e92dce5165b9b9846c047a70d">commit 15cb989</a>.</td>
+<td>LoRA affinity feature is not available as the required LoRA metrics haven't been implemented in Triton yet. <a href="https://github.com/triton-inference-server/server/issues/8181">Feature request</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vllm">vLLM<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h2>
+<p>vLLM is configured as the default in the <a href="https://github.com/kubernetes-sigs/gateway-api-inference-extension/tree/main/pkg/epp">endpoint picker extension</a>. No further configuration is required.</p>
+<h2 id="triton-with-tensorrt-llm-backend">Triton with TensorRT-LLM Backend<a class="headerlink" href="#triton-with-tensorrt-llm-backend" title="Permanent link">&para;</a></h2>
+<p>Triton specific metric names need to be specified when starting the EPP.</p>
+<h3 id="option-1-use-helm">Option 1: Use Helm<a class="headerlink" href="#option-1-use-helm" title="Permanent link">&para;</a></h3>
+<p>Use <code>--set inferencePool.modelServerType=triton-tensorrt-llm</code> to install the <a href="https://github.com/kubernetes-sigs/gateway-api-inference-extension/blob/42eb5ff1c5af1275df43ac384df0ddf20da95134/config/charts/inferencepool"><code>inferencepool</code> via helm</a>. See the <a href="https://github.com/kubernetes-sigs/gateway-api-inference-extension/blob/42eb5ff1c5af1275df43ac384df0ddf20da95134/config/charts/inferencepool/README.md"><code>inferencepool</code> helm guide</a> for more details.</p>
+<h3 id="option-2-edit-epp-deployment-yaml">Option 2: Edit EPP deployment yaml<a class="headerlink" href="#option-2-edit-epp-deployment-yaml" title="Permanent link">&para;</a></h3>
+<p>Add the following to the <code>args</code> of the <a href="https://github.com/kubernetes-sigs/gateway-api-inference-extension/blob/42eb5ff1c5af1275df43ac384df0ddf20da95134/config/manifests/inferencepool-resources.yaml#L32">EPP deployment</a></p>
+<p><code>- -totalQueuedRequestsMetric
+- "nv_trt_llm_request_metrics{request_type=waiting}"
+- -kvCacheUsagePercentageMetric
+- "nv_trt_llm_kv_cache_block_metrics{kv_cache_block_type=fraction}"
+- -loraInfoMetric
+- "" # Set an empty metric to disable LoRA metric scraping as they are not supported by Triton yet.</code></p>
 
 
 

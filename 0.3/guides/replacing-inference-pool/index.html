@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/0.3/concepts/roles-and-personas/">
+        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/0.3/guides/replacing-inference-pool/">
       
       
-        <link rel="prev" href="../conformance/">
+        <link rel="prev" href="../metrics/">
       
       
-        <link rel="next" href="../../implementations/gateways/">
+        <link rel="next" href="../implementers/">
       
       
       <link rel="icon" href="../../images/favicon-64.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Roles and Personas - Kubernetes Gateway API Inference Extension</title>
+        <title>Replacing an Inference Pool - Kubernetes Gateway API Inference Extension</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#roles-and-personas" class="md-skip">
+        <a href="#replacing-an-inferencepool" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +163,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roles and Personas
+              Replacing an Inference Pool
             
           </span>
         </div>
@@ -256,12 +256,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../.." class="md-tabs__link">
           
   
@@ -276,17 +274,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../guides/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Guides
@@ -420,28 +422,25 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -452,7 +451,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Overview
@@ -484,8 +483,6 @@
                 
   
   
-    
-  
   
   
     
@@ -495,11 +492,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -513,7 +512,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -527,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-overview/" class="md-nav__link">
+      <a href="../../concepts/api-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conformance/" class="md-nav__link">
+      <a href="../../concepts/conformance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -566,30 +565,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Roles and Personas
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../concepts/roles-and-personas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -598,44 +577,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#inference-platform-admin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Inference Platform Admin
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inference-workload-owner" class="md-nav__link">
-    <span class="md-ellipsis">
-      Inference Workload Owner
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -771,25 +712,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -800,7 +744,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -811,8 +755,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -820,13 +766,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -840,7 +784,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             User Guides
@@ -854,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/adapter-rollout/" class="md-nav__link">
+      <a href="../adapter-rollout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/metrics/" class="md-nav__link">
+      <a href="../metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -914,10 +858,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../guides/replacing-inference-pool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Replacing an Inference Pool
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -926,6 +890,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-replace-an-inferencepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to replace an InferencePool
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to replace an InferencePool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -946,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/implementers/" class="md-nav__link">
+      <a href="../implementers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,20 +1424,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inference-platform-admin" class="md-nav__link">
+  <a href="#background" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Platform Admin
+      Background
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-workload-owner" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Workload Owner
+      Use Cases
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-replace-an-inferencepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to replace an InferencePool
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to replace an InferencePool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1433,29 +1483,60 @@
   
 
 
-<h1 id="roles-and-personas">Roles and Personas<a class="headerlink" href="#roles-and-personas" title="Permanent link">&para;</a></h1>
-<p>Before diving into the details of the API, descriptions of the personas these APIs were designed for will help convey the thought process of the API design.</p>
-<h2 id="inference-platform-admin">Inference Platform Admin<a class="headerlink" href="#inference-platform-admin" title="Permanent link">&para;</a></h2>
-<p>The Inference Platform Admin creates and manages the infrastructure necessary to run LLM workloads, including handling Ops for:</p>
+<h1 id="replacing-an-inferencepool">Replacing an InferencePool<a class="headerlink" href="#replacing-an-inferencepool" title="Permanent link">&para;</a></h1>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>Replacing an InferencePool is a powerful technique for performing various infrastructure and model updates with minimal disruption and built-in rollback capabilities. This method allows you to introduce changes incrementally, monitor their impact, and revert to the previous state if necessary. </p>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>Use Cases for Replacing an InferencePool:</p>
 <ul>
-<li>Hardware</li>
-<li>Model Server</li>
-<li>Base Model</li>
-<li>Resource Allocation for Workloads</li>
-<li>Gateway configuration</li>
-<li>etc</li>
+<li>Upgrading or replacing your model server framework</li>
+<li>Upgrading or replacing your base model</li>
+<li>Transitioning to new hardware</li>
 </ul>
-<h2 id="inference-workload-owner">Inference Workload Owner<a class="headerlink" href="#inference-workload-owner" title="Permanent link">&para;</a></h2>
-<p>An Inference Workload Owner persona owns and manages one or many Generative AI Workloads (LLM focused <em>currently</em>). This includes:</p>
-<ul>
-<li>Defining criticality</li>
-<li>Managing fine-tunes</li>
-<li>LoRA Adapters</li>
-<li>System Prompts</li>
-<li>Prompt Cache</li>
-<li>etc.</li>
-<li>Managing rollout of adapters</li>
-</ul>
+<h2 id="how-to-replace-an-inferencepool">How to replace an InferencePool<a class="headerlink" href="#how-to-replace-an-inferencepool" title="Permanent link">&para;</a></h2>
+<p>To replacing an InferencePool:</p>
+<ol>
+<li><strong>Deploy new infrastructure</strong>: Create a new InferencePool configured with the new hardware / model server / base model that you chose.</li>
+<li><strong>Configure traffic splitting</strong>: Use an HTTPRoute to split traffic between the existing InferencePool and the new InferencePool. The <code>backendRefs.weight</code> field controls the traffic percentage allocated to each pool.</li>
+<li><strong>Maintain InferenceModel integrity</strong>: Keep your InferenceModel configuration unchanged. This ensures that the system applies the same LoRA adapters consistently across both base model versions.</li>
+<li><strong>Preserve rollback capability</strong>: Retain the original nodes and InferencePool during the roll out to facilitate a rollback if necessary.</li>
+</ol>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>You start with an existing lnferencePool named <code>llm-pool-v1</code>. To replace the original InferencePool, you create a new InferencePool named <code>llm-pool-v2</code>. By configuring an <strong>HTTPRoute</strong>, as shown below, you can incrementally split traffic between the original <code>llm-pool-v1</code> and new <code>llm-pool-v2</code>. </p>
+<ol>
+<li>
+<p>Save the following sample manifest as <code>httproute.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llm-route</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gateway</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inference-gateway</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inference.networking.x-k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InferencePool</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llm-pool-v1</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inference.networking.x-k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InferencePool</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llm-pool-v2</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</code></pre></div>
+</li>
+<li>
+<p>Apply the sample manifest to your cluster:</p>
+<div class="highlight"><pre><span></span><code>kubectl apply -f httproute.yaml
+</code></pre></div>
+<p>The original <code>llm-pool-v1</code> InferencePool receives most of the traffic, while the <code>llm-pool-v2</code> InferencePool receives the rest. </p>
+</li>
+<li>
+<p>Increase the traffic weight gradually for the <code>llm-pool-v2</code> InferencePool to complete the new InferencePool roll out.</p>
+</li>
+</ol>
 
 
 

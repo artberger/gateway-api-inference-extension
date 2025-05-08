@@ -9,10 +9,6 @@
          <lastmod>2025-05-08</lastmod>
     </url>
     <url>
-         <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/implementations/</loc>
-         <lastmod>2025-05-08</lastmod>
-    </url>
-    <url>
          <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/api-types/inferencemodel/</loc>
          <lastmod>2025-05-08</lastmod>
     </url>
@@ -66,6 +62,22 @@
     </url>
     <url>
          <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/guides/metrics/</loc>
+         <lastmod>2025-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/guides/replacing-inference-pool/</loc>
+         <lastmod>2025-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/implementations/gateways/</loc>
+         <lastmod>2025-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/implementations/model-servers/</loc>
+         <lastmod>2025-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://gateway-api-inference-extension.sigs.k8s.io/0.3/performance/benchmark/</loc>
          <lastmod>2025-05-08</lastmod>
     </url>
     <url>

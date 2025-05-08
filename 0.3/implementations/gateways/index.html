@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/0.3/concepts/roles-and-personas/">
+        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/0.3/implementations/gateways/">
       
       
-        <link rel="prev" href="../conformance/">
+        <link rel="prev" href="../../concepts/roles-and-personas/">
       
       
-        <link rel="next" href="../../implementations/gateways/">
+        <link rel="next" href="../model-servers/">
       
       
       <link rel="icon" href="../../images/favicon-64.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Roles and Personas - Kubernetes Gateway API Inference Extension</title>
+        <title>Gateways - Kubernetes Gateway API Inference Extension</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#roles-and-personas" class="md-skip">
+        <a href="#gateway-implementations" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +163,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roles and Personas
+              Gateways
             
           </span>
         </div>
@@ -484,8 +484,6 @@
                 
   
   
-    
-  
   
   
     
@@ -495,11 +493,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -513,7 +513,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -527,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-overview/" class="md-nav__link">
+      <a href="../../concepts/api-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conformance/" class="md-nav__link">
+      <a href="../../concepts/conformance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,6 +561,75 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/roles-and-personas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roles and Personas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implementations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Implementations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -582,7 +651,7 @@
           
   
   <span class="md-ellipsis">
-    Roles and Personas
+    Gateways
   </span>
   
 
@@ -593,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    Roles and Personas
+    Gateways
   </span>
   
 
@@ -615,18 +684,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inference-platform-admin" class="md-nav__link">
+  <a href="#envoy-ai-gateway" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Platform Admin
+      Envoy AI Gateway
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-workload-owner" class="md-nav__link">
+  <a href="#kgateway" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Workload Owner
+      Kgateway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-kubernetes-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Kubernetes Engine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#istio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Istio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alibaba-cloud-container-service-for-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alibaba Cloud Container Service for Kubernetes
     </span>
   </a>
   
@@ -641,54 +737,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Implementations
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            Implementations
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -696,28 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../implementations/gateways/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Gateways
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../implementations/model-servers/" class="md-nav__link">
+      <a href="../model-servers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,18 +1425,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inference-platform-admin" class="md-nav__link">
+  <a href="#envoy-ai-gateway" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Platform Admin
+      Envoy AI Gateway
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-workload-owner" class="md-nav__link">
+  <a href="#kgateway" class="md-nav__link">
     <span class="md-ellipsis">
-      Inference Workload Owner
+      Kgateway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-kubernetes-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Kubernetes Engine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#istio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Istio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alibaba-cloud-container-service-for-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alibaba Cloud Container Service for Kubernetes
     </span>
   </a>
   
@@ -1433,29 +1487,56 @@
   
 
 
-<h1 id="roles-and-personas">Roles and Personas<a class="headerlink" href="#roles-and-personas" title="Permanent link">&para;</a></h1>
-<p>Before diving into the details of the API, descriptions of the personas these APIs were designed for will help convey the thought process of the API design.</p>
-<h2 id="inference-platform-admin">Inference Platform Admin<a class="headerlink" href="#inference-platform-admin" title="Permanent link">&para;</a></h2>
-<p>The Inference Platform Admin creates and manages the infrastructure necessary to run LLM workloads, including handling Ops for:</p>
+<h1 id="gateway-implementations">Gateway Implementations<a class="headerlink" href="#gateway-implementations" title="Permanent link">&para;</a></h1>
+<p>This project has several implementations that are planned or in progress:</p>
 <ul>
-<li>Hardware</li>
-<li>Model Server</li>
-<li>Base Model</li>
-<li>Resource Allocation for Workloads</li>
-<li>Gateway configuration</li>
-<li>etc</li>
+<li><a href="#envoy-gateway">Envoy AI Gateway</a></li>
+<li><a href="#kgateway">Kgateway</a></li>
+<li><a href="#google-kubernetes-engine">Google Kubernetes Engine</a></li>
+<li><a href="#istio">Istio</a></li>
+<li><a href="#alibaba-cloud-container-service-for-kubernetes">Alibaba Cloud Container Service for Kubernetes</a></li>
 </ul>
-<h2 id="inference-workload-owner">Inference Workload Owner<a class="headerlink" href="#inference-workload-owner" title="Permanent link">&para;</a></h2>
-<p>An Inference Workload Owner persona owns and manages one or many Generative AI Workloads (LLM focused <em>currently</em>). This includes:</p>
-<ul>
-<li>Defining criticality</li>
-<li>Managing fine-tunes</li>
-<li>LoRA Adapters</li>
-<li>System Prompts</li>
-<li>Prompt Cache</li>
-<li>etc.</li>
-<li>Managing rollout of adapters</li>
-</ul>
+<h2 id="envoy-ai-gateway">Envoy AI Gateway<a class="headerlink" href="#envoy-ai-gateway" title="Permanent link">&para;</a></h2>
+<p><a href="https://aigateway.envoyproxy.io/">Envoy AI Gateway</a> is an open source project built on top of 
+<a href="https://github.com/envoyproxy">Envoy</a> and <a href="https://gateway.envoyproxy.io/">Envoy Gateway</a> to handle request traffic 
+from application clients to GenAI services. The features and capabilities are outlined <a href="https://aigateway.envoyproxy.io/docs/capabilities/">here</a>. Use the <a href="https://aigateway.envoyproxy.io/docs/capabilities/gateway-api-inference-extension">quickstart</a> to get Envoy AI Gateway running with Gateway API in a few simple steps.</p>
+<p>Progress towards supporting this project is tracked with a <a href="https://github.com/envoyproxy/ai-gateway/issues/423">GitHub
+Issue</a>.</p>
+<h2 id="kgateway">Kgateway<a class="headerlink" href="#kgateway" title="Permanent link">&para;</a></h2>
+<p><a href="https://kgateway.dev/">Kgateway</a> is a feature-rich, Kubernetes-native
+ingress controller and next-generation API gateway. Kgateway brings the
+full power and community support of Gateway API to its existing control-plane
+implementation.</p>
+<p>Progress towards supporting this project is tracked with a <a href="https://github.com/kgateway-dev/kgateway/issues/10411">GitHub
+Issue</a>.</p>
+<h2 id="google-kubernetes-engine">Google Kubernetes Engine<a class="headerlink" href="#google-kubernetes-engine" title="Permanent link">&para;</a></h2>
+<p><a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine (GKE)</a> is a managed Kubernetes platform offered
+by Google Cloud. GKE's implementation of the Gateway API is through the <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/gateway-api">GKE
+Gateway controller</a> which provisions Google Cloud Load Balancers
+for Pods in GKE clusters.</p>
+<p>The GKE Gateway controller supports weighted traffic splitting, mirroring,
+advanced routing, multi-cluster load balancing and more. See the docs to deploy
+<a href="https://cloud.google.com/kubernetes-engine/docs/how-to/deploying-gateways">private or public Gateways</a> and also <a href="https://cloud.google.com/kubernetes-engine/docs/how-to/deploying-multi-cluster-gateways">multi-cluster
+Gateways</a>.</p>
+<p>Progress towards supporting this project is tracked with a <a href="https://github.com/GoogleCloudPlatform/gke-gateway-api/issues/20">GitHub
+Issue</a>.</p>
+<h2 id="istio">Istio<a class="headerlink" href="#istio" title="Permanent link">&para;</a></h2>
+<p><a href="https://istio.io/">Istio</a> is an open source service mesh and gateway implementation.
+It provides a fully compliant implementation of the Kubernetes Gateway API for cluster ingress traffic control. 
+For service mesh users, Istio also fully supports east-west (including <a href="https://gateway-api.sigs.k8s.io/mesh/">GAMMA</a>) traffic management within the mesh.</p>
+<p>Gateway API Inference Extension support is being tracked by this <a href="https://github.com/istio/istio/issues/55768">GitHub
+Issue</a>.</p>
+<h2 id="alibaba-cloud-container-service-for-kubernetes">Alibaba Cloud Container Service for Kubernetes<a class="headerlink" href="#alibaba-cloud-container-service-for-kubernetes" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.alibabacloud.com/help/en/ack">Alibaba Cloud Container Service for Kubernetes (ACK)</a> is a managed Kubernetes platform 
+offered by Alibaba Cloud. The implementation of the Gateway API in ACK is through the 
+<a href="https://www.alibabacloud.com/help/en/ack/product-overview/ack-gateway-with-inference-extension">ACK Gateway with Inference Extension</a> component, which introduces model-aware, 
+GPU-efficient load balancing for AI workloads beyond basic HTTP routing.</p>
+<p>The ACK Gateway with Inference Extension implements the Gateway API Inference Extension 
+and provides optimized routing for serving generative AI workloads, 
+including weighted traffic splitting, mirroring, advanced routing, etc. 
+See the docs for the <a href="https://www.alibabacloud.com/help/en/ack/ack-managed-and-ack-dedicated/user-guide/intelligent-routing-and-traffic-management-with-ack-gateway-inference-extension">usage</a>.</p>
+<p>Progress towards supporting Gateway API Inference Extension is being tracked 
+by <a href="https://github.com/AliyunContainerService/ack-gateway-api/issues/1">this Issue</a>.</p>
 
 
 
