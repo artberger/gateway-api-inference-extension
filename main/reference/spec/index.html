@@ -8,8 +8,6 @@
       
       
       
-        <link rel="canonical" href="https://gateway-api-inference-extension.sigs.k8s.io/main/reference/spec/">
-      
       
         <link rel="prev" href="../../performance/benchmark/">
       
@@ -82,22 +80,6 @@
     <div data-md-component="announce">
       
     </div>
-    
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-          <aside class="md-banner md-banner--warning">
-            <div class="md-banner__inner md-grid md-typeset">
-              
-  You're not viewing the latest version.
-  <a href="../../.."> 
-    <strong>Click here to go to latest.</strong>
-  </a>
-
-            </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
-          </aside>
-        
-      </div>
     
     
       <!--
@@ -1553,27 +1535,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../contributing/docs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Documentation Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1869,7 +1830,7 @@ inference.networking.x-k8s.io API group.</p>
 <h4 id="criticality">Criticality<a class="headerlink" href="#criticality" title="Permanent link">&para;</a></h4>
 <p><em>Underlying type:</em> <em>string</em></p>
 <p>Criticality defines how important it is to serve the model compared to other models.
-Criticality is intentionally a bounded enum to contain the possibilities that need to be supported by the load balancing algorithm. Any reference to the Criticality field must be optional(use a pointer), and set no default.
+Criticality is intentionally a bounded enum to contain the possibilities that need to be supported by the load balancing algorithm. Any reference to the Criticality field must be optional (use a pointer), and set no default.
 This allows us to union this with a oneOf field in the future should we wish to adjust/extend this behavior.</p>
 <p><em>Validation:</em>
 - Enum: [Critical Standard Sheddable]</p>
@@ -1943,7 +1904,7 @@ This type is intended to be a union of mutually exclusive configuration options 
 </tr>
 <tr>
 <td><code>kind</code> <em><a href="#kind">Kind</a></em></td>
-<td>Kind is the Kubernetes resource kind of the referent. For example<br />"Service".<br />Defaults to "Service" when not specified.<br />ExternalName services can refer to CNAME DNS records that may live<br />outside of the cluster and as such are difficult to reason about in<br />terms of conformance. They also may not be safe to forward to (see<br />CVE-2021-25740 for more information). Implementations MUST NOT<br />support ExternalName Services.</td>
+<td>Kind is the Kubernetes resource kind of the referent. For example<br />"Service".<br /><br />Defaults to "Service" when not specified.<br /><br />ExternalName services can refer to CNAME DNS records that may live<br />outside of the cluster and as such are difficult to reason about in<br />terms of conformance. They also may not be safe to forward to (see<br />CVE-2021-25740 for more information). Implementations MUST NOT<br />support ExternalName Services.</td>
 <td>Service</td>
 <td>MaxLength: 63 <br />MinLength: 1 <br />Pattern: <code>^[a-zA-Z]([-a-zA-Z0-9]*[a-zA-Z0-9])?$</code> <br /></td>
 </tr>
@@ -2038,7 +1999,7 @@ responsive.</p>
 </tr>
 <tr>
 <td><code>kind</code> <em><a href="#kind">Kind</a></em></td>
-<td>Kind is the Kubernetes resource kind of the referent. For example<br />"Service".<br />Defaults to "Service" when not specified.<br />ExternalName services can refer to CNAME DNS records that may live<br />outside of the cluster and as such are difficult to reason about in<br />terms of conformance. They also may not be safe to forward to (see<br />CVE-2021-25740 for more information). Implementations MUST NOT<br />support ExternalName Services.</td>
+<td>Kind is the Kubernetes resource kind of the referent. For example<br />"Service".<br /><br />Defaults to "Service" when not specified.<br /><br />ExternalName services can refer to CNAME DNS records that may live<br />outside of the cluster and as such are difficult to reason about in<br />terms of conformance. They also may not be safe to forward to (see<br />CVE-2021-25740 for more information). Implementations MUST NOT<br />support ExternalName Services.</td>
 <td>Service</td>
 <td>MaxLength: 63 <br />MinLength: 1 <br />Pattern: <code>^[a-zA-Z]([-a-zA-Z0-9]*[a-zA-Z0-9])?$</code> <br /></td>
 </tr>
@@ -2157,7 +2118,7 @@ condition, one will be selected at random.</p>
 </tr>
 <tr>
 <td><code>criticality</code> <em><a href="#criticality">Criticality</a></em></td>
-<td>Criticality defines how important it is to serve the model compared to other models referencing the same pool.<br />Criticality impacts how traffic is handled in resource constrained situations. It handles this by<br />queuing or rejecting requests of lower criticality. InferenceModels of an equivalent Criticality will<br />fairly share resources over throughput of tokens. In the future, the metric used to calculate fairness,<br />and the proportionality of fairness will be configurable.<br />Default values for this field will not be set, to allow for future additions of new field that may 'one of' with this field.<br />Any implementations that may consume this field may treat an unset value as the 'Standard' range.</td>
+<td>Criticality defines how important it is to serve the model compared to other models referencing the same pool.<br />Criticality impacts how traffic is handled in resource constrained situations. It handles this by<br />queuing or rejecting requests of lower criticality. InferenceModels of an equivalent Criticality will<br />fairly share resources over throughput of tokens. In the future, the metric used to calculate fairness,<br />and the proportionality of fairness will be configurable.<br /><br />Default values for this field will not be set, to allow for future additions of new field that may 'one of' with this field.<br />Any implementations that may consume this field may treat an unset value as the 'Standard' range.</td>
 <td></td>
 <td>Enum: [Critical Standard Sheddable] <br /></td>
 </tr>
@@ -2191,7 +2152,7 @@ condition, one will be selected at random.</p>
 <tbody>
 <tr>
 <td><code>conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.31/#condition-v1-meta">Condition</a> array</em></td>
-<td>Conditions track the state of the InferenceModel.<br />Known condition types are:<br />* "Accepted"</td>
+<td>Conditions track the state of the InferenceModel.<br /><br />Known condition types are:<br /><br />* "Accepted"</td>
 <td>[map[lastTransitionTime:1970-01-01T00:00:00Z message:Waiting for controller reason:Pending status:Unknown type:Ready]]</td>
 <td>MaxItems: 8 <br /></td>
 </tr>
@@ -2291,7 +2252,7 @@ condition, one will be selected at random.</p>
 <tbody>
 <tr>
 <td><code>parent</code> <em><a href="#poolstatus">PoolStatus</a> array</em></td>
-<td>Parents is a list of parent resources (usually Gateways) that are<br />associated with the route, and the status of the InferencePool with respect to<br />each parent.<br />A maximum of 32 Gateways will be represented in this list. An empty list<br />means the route has not been attached to any Gateway.</td>
+<td>Parents is a list of parent resources (usually Gateways) that are<br />associated with the route, and the status of the InferencePool with respect to<br />each parent.<br /><br />A maximum of 32 Gateways will be represented in this list. An empty list<br />means the route has not been attached to any Gateway.</td>
 <td></td>
 <td>MaxItems: 32 <br /></td>
 </tr>
@@ -2430,7 +2391,7 @@ referrer.</p>
 </tr>
 <tr>
 <td><code>conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.31/#condition-v1-meta">Condition</a> array</em></td>
-<td>Conditions track the state of the InferencePool.<br />Known condition types are:<br /><em> "Accepted"<br /></em> "ResolvedRefs"</td>
+<td>Conditions track the state of the InferencePool.<br /><br />Known condition types are:<br /><br /><em> "Accepted"<br /></em> "ResolvedRefs"</td>
 <td>[map[lastTransitionTime:1970-01-01T00:00:00Z message:Waiting for controller reason:Pending status:Unknown type:Accepted]]</td>
 <td>MaxItems: 8 <br /></td>
 </tr>
@@ -2473,7 +2434,7 @@ and emitted on the appropriate InferenceModel object.</p>
 </tr>
 <tr>
 <td><code>weight</code> <em>integer</em></td>
-<td>Weight is used to determine the proportion of traffic that should be<br />sent to this model when multiple target models are specified.<br />Weight defines the proportion of requests forwarded to the specified<br />model. This is computed as weight/(sum of all weights in this<br />TargetModels list). For non-zero values, there may be some epsilon from<br />the exact proportion defined here depending on the precision an<br />implementation supports. Weight is not a percentage and the sum of<br />weights does not need to equal 100.<br />If a weight is set for any targetModel, it must be set for all targetModels.<br />Conversely weights are optional, so long as ALL targetModels do not specify a weight.</td>
+<td>Weight is used to determine the proportion of traffic that should be<br />sent to this model when multiple target models are specified.<br /><br />Weight defines the proportion of requests forwarded to the specified<br />model. This is computed as weight/(sum of all weights in this<br />TargetModels list). For non-zero values, there may be some epsilon from<br />the exact proportion defined here depending on the precision an<br />implementation supports. Weight is not a percentage and the sum of<br />weights does not need to equal 100.<br /><br />If a weight is set for any targetModel, it must be set for all targetModels.<br />Conversely weights are optional, so long as ALL targetModels do not specify a weight.</td>
 <td></td>
 <td>Maximum: 1e+06 <br />Minimum: 1 <br /></td>
 </tr>
@@ -2531,7 +2492,7 @@ and emitted on the appropriate InferenceModel object.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs", "navigation.top", "navigation.expand"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
