@@ -1623,19 +1623,8 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 </div>
 </div>
 <h3 id="install-the-inference-extension-crds">Install the Inference Extension CRDs<a class="headerlink" href="#install-the-inference-extension-crds" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Latest Release</label><label for="__tabbed_2_2">Dev Version</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">VERSION</span><span class="o">=</span>v0.3.0
-kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/kubernetes-sigs/gateway-api-inference-extension/releases/download/<span class="nv">$VERSION</span>/manifests.yaml
-</code></pre></div>
-</div>
-<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>https://github.com/kubernetes-sigs/gateway-api-inference-extension/config/crd
 </code></pre></div>
-</div>
-</div>
-</div>
 <h3 id="deploy-inferencemodel">Deploy InferenceModel<a class="headerlink" href="#deploy-inferencemodel" title="Permanent link">&para;</a></h3>
 <p>Deploy the sample InferenceModel which is configured to forward traffic to the <code>food-review-1</code> <a href="https://docs.vllm.ai/en/latest/features/lora.html">LoRA adapter</a> of the sample model server.</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/kubernetes-sigs/gateway-api-inference-extension/raw/main/config/manifests/inferencemodel.yaml
@@ -1645,7 +1634,7 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 </code></pre></div>
 <h3 id="deploy-inference-gateway">Deploy Inference Gateway<a class="headerlink" href="#deploy-inference-gateway" title="Permanent link">&para;</a></h3>
 <p>Choose one of the following options to deploy an Inference Gateway.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">GKE</label><label for="__tabbed_3_2">Istio</label><label for="__tabbed_3_3">Kgateway</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">GKE</label><label for="__tabbed_2_2">Istio</label><label for="__tabbed_2_3">Kgateway</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -1788,7 +1777,7 @@ inference-gateway<span class="w">   </span>kgateway<span class="w">            <
 </div>
 <h3 id="try-it-out">Try it out<a class="headerlink" href="#try-it-out" title="Permanent link">&para;</a></h3>
 <p>Wait until the gateway is ready.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">GPU-Based Model Server</label><label for="__tabbed_4_2">CPU-Based Model Server</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">GPU-Based Model Server</label><label for="__tabbed_3_2">CPU-Based Model Server</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>gateway/inference-gateway<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.addresses[0].value}&#39;</span><span class="k">)</span>
@@ -1851,7 +1840,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> 
 <p>Choose one of the following options to cleanup the Inference Gateway.</p>
 </li>
 </ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">GKE</label><label for="__tabbed_5_2">Istio</label><label for="__tabbed_5_3">Kgateway</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">GKE</label><label for="__tabbed_4_2">Istio</label><label for="__tabbed_4_3">Kgateway</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><strong>TODO</strong></p>
