@@ -1,11 +1,6 @@
 /* Hide title in favor of logo */
-.md-header__topic .md-ellipsis {
+.md-header__topic {
     display: none;
-}
-
-/* Ensure the version switcher remains visible */
-.md-header__topic .md-version {
-    display: block;
 }
 
 /* Use Kubernetes color as primary */
