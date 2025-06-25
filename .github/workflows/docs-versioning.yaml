@@ -47,6 +47,11 @@ jobs:
         if: github.event_name == 'push'
         run: |
           echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+      - name: Ensure GITHUB_REF_NAME is set
+        run: |
+          if [[ -z "$GITHUB_REF_NAME" ]]; then
+            echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+          fi
       - name: Extract major.minor version
         id: extract_version
         run: |
