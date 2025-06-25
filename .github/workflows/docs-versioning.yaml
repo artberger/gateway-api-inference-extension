@@ -80,14 +80,16 @@ jobs:
       - name: Determine if this tag is the latest version
         id: is_latest
         run: |
-          CURRENT="$FULL_VERSION"
+          echo "CURRENT: $FULL_VERSION"
           LATEST_TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
+          echo "LATEST_TAG: $LATEST_TAG"
           if [[ -z "$LATEST_TAG" ]]; then
             echo "Error: Could not find any semver-style tags."
             exit 1
           fi
           LATEST="${LATEST_TAG#v}"
-          if [[ "$CURRENT" == "$LATEST" ]]; then
+          echo "LATEST: $LATEST"
+          if [[ "$FULL_VERSION" == "$LATEST" ]]; then
             echo "is_latest=true" >> $GITHUB_OUTPUT
           else
             echo "is_latest=false" >> $GITHUB_OUTPUT
