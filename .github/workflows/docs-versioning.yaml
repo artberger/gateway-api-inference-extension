@@ -106,13 +106,12 @@ jobs:
             mike set-default \
               --branch main \
               --push \
-              latest site-src
+              latest
           else
             mike deploy \
               --branch main \
               --push \
-              $VERSION \
-              site site-src
+              $VERSION
           fi
       - name: Push versioned docs
         run: git push origin main
