@@ -47,6 +47,17 @@ jobs:
         if: github.event_name == 'push'
         run: |
           echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+      - name: Extract major.minor version
+        id: extract_version
+        run: |
+          TAG="$GITHUB_REF_NAME"
+          TAG="${TAG#v}"  # Remove leading 'v'
+          VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+') || true
+          if [[ -z "$VERSION" ]]; then
+            echo "Error: Could not extract major.minor version from tag '$GITHUB_REF_NAME'"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
       - name: Determine if this tag is the latest version
         id: is_latest
         run: |
@@ -70,17 +81,6 @@ jobs:
           else
             echo "is_latest=false" >> $GITHUB_OUTPUT
           fi
-      - name: Extract major.minor version
-        id: extract_version
-        run: |
-          TAG="$GITHUB_REF_NAME"
-          TAG="${TAG#v}"  # Remove leading 'v'
-          VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+') || true
-          if [[ -z "$VERSION" ]]; then
-            echo "Error: Could not extract major.minor version from tag '$GITHUB_REF_NAME'"
-            exit 1
-          fi
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
       - name: Version with mike
         run: |
           if [[ "${{ steps.is_latest.outputs.is_latest }}" == "true" ]]; then
