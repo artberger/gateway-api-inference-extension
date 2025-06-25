@@ -19,7 +19,6 @@ jobs:
   version-docs:
     runs-on: ubuntu-latest
     env:
-      VERSION: ${{ github.ref_name }}   # picks up the tag, e.g. v0.3.0
       ALIAS: latest                     # your "latest" alias
     steps:
       - uses: actions/checkout@v4
@@ -43,13 +42,15 @@ jobs:
           else
             TAG="${{ github.event.inputs.tag }}"
           fi
-          echo "::set-env name=GITHUB_REF_NAME::$TAG"
           echo "GITHUB_REF_NAME=$TAG" >> $GITHUB_ENV
+      - name: Set tag for push trigger
+        if: github.event_name == 'push'
+        run: |
+          echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
       - name: Determine if this tag is the latest version
         id: is_latest
         run: |
-          # Get the current tag (e.g., v0.3.0)
-          VERSION="${{ github.ref_name }}"
+          VERSION="$GITHUB_REF_NAME"
           # Remove leading 'v' and any pre-release suffix
           CURRENT_BARE="${VERSION#v}"
           CURRENT_BARE="${CURRENT_BARE%%-*}"
@@ -72,7 +73,7 @@ jobs:
       - name: Extract major.minor version
         id: extract_version
         run: |
-          TAG="${{ github.ref_name }}"
+          TAG="$GITHUB_REF_NAME"
           TAG="${TAG#v}"  # Remove leading 'v'
           VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
