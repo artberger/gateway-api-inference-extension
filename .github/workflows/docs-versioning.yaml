@@ -30,6 +30,10 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r hack/mkdocs/image/requirements.txt mike
+      - name: Configure git user
+        run: |
+          git config --global user.email "docs-ci-bot@example.com"
+          git config --global user.name "docs-ci-bot"
       - name: Determine tag to use
         id: tag
         run: |
