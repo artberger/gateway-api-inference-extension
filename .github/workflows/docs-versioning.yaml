@@ -5,6 +5,12 @@ on:
       - 'v*.*.*'
       # 2. Exclude anything with "-rc." after the patch
       - '!v*.*.*-rc.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to use for documentation versioning (e.g., v1.2.3). If not set, will use the latest tag)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -25,6 +31,20 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install mkdocs mike
+      - name: Set tag for manual trigger
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [[ -z "${{ github.event.inputs.tag }}" ]]; then
+            TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
+            if [[ -z "$TAG" ]]; then
+              echo "Error: Could not find any semver-style tags."
+              exit 1
+            fi
+          else
+            TAG="${{ github.event.inputs.tag }}"
+          fi
+          echo "::set-env name=GITHUB_REF_NAME::$TAG"
+          echo "GITHUB_REF_NAME=$TAG" >> $GITHUB_ENV
       - name: Determine if this tag is the latest version
         id: is_latest
         run: |
