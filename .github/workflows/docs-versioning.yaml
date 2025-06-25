@@ -102,8 +102,7 @@ jobs:
             mike deploy \
               --branch main \
               --push \
-              --update-aliases $VERSION latest \
-              site site-src
+              --update-aliases $VERSION latest
             mike set-default \
               --branch main \
               --push \
