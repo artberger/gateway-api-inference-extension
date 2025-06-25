@@ -61,37 +61,33 @@ jobs:
           if [[ -z "$GITHUB_REF_NAME" ]]; then
             echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
           fi
-      - name: Extract major.minor version
-        id: extract_version
+      - name: Extract versions
+        id: extract_versions
         run: |
           TAG="${{ steps.tag.outputs.tag }}"
           echo "TAG is $TAG"
-          TAG="${TAG#v}"  # Remove leading 'v'
-          VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+') || true
-          if [[ -z "$VERSION" ]]; then
-            echo "Error: Could not extract major.minor version from tag '${{ steps.tag.outputs.tag }}'"
+          TAG_NO_V="${TAG#v}"  # Remove leading 'v'
+          MAJOR_MINOR=$(echo "$TAG_NO_V" | grep -oE '^[0-9]+\.[0-9]+') || true
+          FULL_VERSION=$(echo "$TAG_NO_V" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+') || true
+          if [[ -z "$MAJOR_MINOR" || -z "$FULL_VERSION" ]]; then
+            echo "Error: Could not extract versions from tag '$TAG'"
             exit 1
           fi
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "MAJOR_MINOR=$MAJOR_MINOR" >> $GITHUB_ENV
+          echo "FULL_VERSION=$FULL_VERSION" >> $GITHUB_ENV
+          echo "major_minor=$MAJOR_MINOR" >> $GITHUB_OUTPUT
+          echo "full_version=$FULL_VERSION" >> $GITHUB_OUTPUT
       - name: Determine if this tag is the latest version
         id: is_latest
         run: |
-          VERSION="$GITHUB_REF_NAME"
-          # Remove leading 'v' and any pre-release suffix
-          CURRENT_BARE="${VERSION#v}"
-          CURRENT_BARE="${CURRENT_BARE%%-*}"
-
-          # Find the latest semver tag (excluding pre-releases)
+          CURRENT="$FULL_VERSION"
           LATEST_TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
           if [[ -z "$LATEST_TAG" ]]; then
             echo "Error: Could not find any semver-style tags."
             exit 1
           fi
-          LATEST_BARE="${LATEST_TAG#v}"
-          LATEST_BARE="${LATEST_BARE%%-*}"
-
-          # Compare
-          if [[ "$CURRENT_BARE" == "$LATEST_BARE" ]]; then
+          LATEST="${LATEST_TAG#v}"
+          if [[ "$CURRENT" == "$LATEST" ]]; then
             echo "is_latest=true" >> $GITHUB_OUTPUT
           else
             echo "is_latest=false" >> $GITHUB_OUTPUT
@@ -102,7 +98,7 @@ jobs:
             mike deploy \
               --branch main \
               --push \
-              --update-aliases $VERSION latest
+              --update-aliases $MAJOR_MINOR latest
             mike set-default \
               --branch main \
               --push \
@@ -111,7 +107,7 @@ jobs:
             mike deploy \
               --branch main \
               --push \
-              $VERSION
+              $MAJOR_MINOR
           fi
       - name: Push versioned docs
         run: git push origin main
