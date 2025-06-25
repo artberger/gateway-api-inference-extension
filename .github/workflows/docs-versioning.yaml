@@ -30,18 +30,23 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install mkdocs mike
-      - name: Set tag for manual trigger
-        if: github.event_name == 'workflow_dispatch'
+      - name: Determine tag to use
+        id: tag
         run: |
-          if [[ -z "${{ github.event.inputs.tag }}" ]]; then
-            TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
-            if [[ -z "$TAG" ]]; then
-              echo "Error: Could not find any semver-style tags."
-              exit 1
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            if [[ -z "${{ github.event.inputs.tag }}" ]]; then
+              TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
+              if [[ -z "$TAG" ]]; then
+                echo "Error: Could not find any semver-style tags."
+                exit 1
+              fi
+            else
+              TAG="${{ github.event.inputs.tag }}"
             fi
           else
-            TAG="${{ github.event.inputs.tag }}"
+            TAG="${{ github.ref_name }}"
           fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
           echo "GITHUB_REF_NAME=$TAG" >> $GITHUB_ENV
       - name: Set tag for push trigger
         if: github.event_name == 'push'
@@ -55,11 +60,12 @@ jobs:
       - name: Extract major.minor version
         id: extract_version
         run: |
-          TAG="$GITHUB_REF_NAME"
+          TAG="${{ steps.tag.outputs.tag }}"
+          echo "TAG is $TAG"
           TAG="${TAG#v}"  # Remove leading 'v'
-          VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+') || true
+          VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\\.[0-9]+') || true
           if [[ -z "$VERSION" ]]; then
-            echo "Error: Could not extract major.minor version from tag '$GITHUB_REF_NAME'"
+            echo "Error: Could not extract major.minor version from tag '${{ steps.tag.outputs.tag }}'"
             exit 1
           fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
