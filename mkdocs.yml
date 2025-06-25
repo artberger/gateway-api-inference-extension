@@ -57,10 +57,10 @@ nav:
   - Overview:
     - Introduction: index.md
     - Concepts:
-        API Overview: concepts/api-overview.md
-        Design Principles: concepts/design-principles.md
-        Conformance: concepts/conformance.md
-        Roles and Personas: concepts/roles-and-personas.md
+      - API Overview: concepts/api-overview.md
+      - Design Principles: concepts/design-principles.md
+      - Conformance: concepts/conformance.md
+      - Roles and Personas: concepts/roles-and-personas.md
     - Implementations: 
       - Gateways: implementations/gateways.md
       - Model Servers: implementations/model-servers.md
