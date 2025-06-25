@@ -1,0 +1,79 @@
+on:
+    push:
+      tags:
+        # 1. Include all semver‐style vX.Y.Z tags
+        - 'v*.*.*'
+        # 2. Exclude anything with "-rc." after the patch
+        - '!v*.*.*-rc.*'
+  
+  permissions:
+    contents: write
+  
+  jobs:
+    version-docs:
+      runs-on: ubuntu-latest
+      env:
+        VERSION: ${{ github.ref_name }}   # picks up the tag, e.g. v0.3.0
+        ALIAS: latest                     # your "latest" alias
+      steps:
+        - uses: actions/checkout@v4
+          with:
+            fetch-depth: 0                # ensures tags are available
+        - name: Set up Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.x'
+        - name: Install dependencies
+          run: pip install mkdocs mike
+        - name: Determine if this tag is the latest version
+          id: is_latest
+          run: |
+            # Get the current tag (e.g., v0.3.0)
+            VERSION="${{ github.ref_name }}"
+            # Remove leading 'v' and any pre-release suffix
+            CURRENT_BARE="${VERSION#v}"
+            CURRENT_BARE="${CURRENT_BARE%%-*}"
+
+            # Find the latest semver tag (excluding pre-releases)
+            LATEST_TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
+            if [[ -z "$LATEST_TAG" ]]; then
+              echo "Error: Could not find any semver-style tags."
+              exit 1
+            fi
+            LATEST_BARE="${LATEST_TAG#v}"
+            LATEST_BARE="${LATEST_BARE%%-*}"
+
+            # Compare
+            if [[ "$CURRENT_BARE" == "$LATEST_BARE" ]]; then
+              echo "is_latest=true" >> $GITHUB_OUTPUT
+            else
+              echo "is_latest=false" >> $GITHUB_OUTPUT
+            fi
+        - name: Extract major.minor version
+          id: extract_version
+          run: |
+            TAG="${{ github.ref_name }}"
+            TAG="${TAG#v}"  # Remove leading 'v'
+            VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+')
+            echo "VERSION=$VERSION" >> $GITHUB_ENV
+        - name: Version with mike
+          run: |
+            if [[ "${{ steps.is_latest.outputs.is_latest }}" == "true" ]]; then
+              mike deploy \
+                --branch main \
+                --push \
+                --update-aliases $VERSION latest \
+                site site-src
+              mike set-default \
+                --branch main \
+                --push \
+                latest site-src
+            else
+              mike deploy \
+                --branch main \
+                --push \
+                $VERSION \
+                site site-src
+            fi
+        - name: Push versioned docs
+          run: git push origin main
