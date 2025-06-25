@@ -80,20 +80,20 @@ jobs:
         run: |
           if [[ "${{ steps.is_latest.outputs.is_latest }}" == "true" ]]; then
             mike deploy \
-              --branch adb-gh-action \
+              --branch main \
               --push \
               --update-aliases $VERSION latest \
               site site-src
             mike set-default \
-              --branch adb-gh-action \
+              --branch main \
               --push \
               latest site-src
           else
             mike deploy \
-              --branch adb-gh-action \
+              --branch main \
               --push \
               $VERSION \
               site site-src
           fi
       - name: Push versioned docs
-        run: git push origin adb-gh-action
+        run: git push origin main
