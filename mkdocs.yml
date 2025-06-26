@@ -2,7 +2,7 @@ site_name: Kubernetes Gateway API Inference Extension
 repo_url: https://github.com/kubernetes-sigs/gateway-api-inference-extension
 repo_name: kubernetes-sigs/gateway-api-inference-extension
 site_url: 'https://gateway-api-inference-extension.sigs.k8s.io/'
-site_dir: site
+site_dir: site-mkdocs
 docs_dir: site-src
 extra:
   version:
