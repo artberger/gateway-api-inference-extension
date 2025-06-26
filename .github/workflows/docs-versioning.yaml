@@ -125,3 +125,8 @@ jobs:
           fi
       - name: Push versioned docs
         run: git push origin main
+      - name: Check mike version and path
+        run: |
+          which mike
+          mike --version
+          pip show mike
