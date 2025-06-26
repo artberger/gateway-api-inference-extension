@@ -30,7 +30,12 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r hack/mkdocs/image/requirements.txt
-      
+
+      - name: Check mike version and path
+        run: |
+          which mike
+          mike --version
+          pip show mike        
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq  
       
@@ -125,8 +130,3 @@ jobs:
           fi
       - name: Push versioned docs
         run: git push origin main
-      - name: Check mike version and path
-        run: |
-          which mike
-          mike --version
-          pip show mike
