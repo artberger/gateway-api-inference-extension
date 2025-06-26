@@ -1,6 +1,6 @@
 # Introduction
 
-> v0.2.1 manual test
+> v1.2.3 manual test
 
 Gateway API Inference Extension is an official Kubernetes project that optimizes self-hosting Generative Models on Kubernetes.
 
