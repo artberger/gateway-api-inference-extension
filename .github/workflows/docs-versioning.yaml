@@ -30,10 +30,15 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r hack/mkdocs/image/requirements.txt mike
+      
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq  
+      
       - name: Configure git user
         run: |
           git config --global user.email "docs-ci-bot@example.com"
           git config --global user.name "docs-ci-bot"
+      
       - name: Determine tag to use
         id: tag
         run: |
@@ -77,15 +82,19 @@ jobs:
           echo "FULL_VERSION=$FULL_VERSION" >> $GITHUB_ENV
           echo "major_minor=$MAJOR_MINOR" >> $GITHUB_OUTPUT
           echo "full_version=$FULL_VERSION" >> $GITHUB_OUTPUT
-      - name: Determine if this major.minor is the latest
+      - name: Check if this major.minor matches the latest GitHub release
         id: is_latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "CURRENT MAJOR.MINOR: $MAJOR_MINOR"
-          # Get all major.minor versions from tags, sort, and pick the highest
-          LATEST_MAJOR_MINOR=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' \
-            | sed -E 's/^v([0-9]+\.[0-9]+)\.[0-9]+$/\1/' \
-            | sort -V | uniq | tail -n1)
-          echo "LATEST_MAJOR_MINOR: $LATEST_MAJOR_MINOR"
+          # Get the tag name of the latest GitHub release
+          LATEST_RELEASE_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest" | jq -r .tag_name)
+          echo "Latest release tag: $LATEST_RELEASE_TAG"
+          # Extract major.minor from the latest release tag
+          LATEST_MAJOR_MINOR=$(echo "$LATEST_RELEASE_TAG" | sed -E 's/^v?([0-9]+\.[0-9]+)\.[0-9]+.*$/\1/')
+          echo "Latest release major.minor: $LATEST_MAJOR_MINOR"
+          echo "Current major.minor: $MAJOR_MINOR"
           if [[ "$MAJOR_MINOR" == "$LATEST_MAJOR_MINOR" ]]; then
             echo "is_latest=true" >> $GITHUB_OUTPUT
           else
