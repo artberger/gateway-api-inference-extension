@@ -18,60 +18,37 @@ permissions:
 jobs:
   version-docs:
     runs-on: ubuntu-latest
-    env:
-      ALIAS: latest                     # your "latest" alias
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0                # ensures tags are available
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r hack/mkdocs/image/requirements.txt
-    
       - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq  
-      
+        run: sudo apt-get update && sudo apt-get install -y jq
       - name: Configure git user
         run: |
           git config --global user.email "docs-ci-bot@example.com"
           git config --global user.name "docs-ci-bot"
-      
       - name: Determine tag to use
         id: tag
         run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            if [[ -z "${{ github.event.inputs.tag }}" ]]; then
-              TAG=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | grep -v -E '\-rc\.' | head -n1)
-              if [[ -z "$TAG" ]]; then
-                echo "Error: Could not find any semver-style tags."
-                exit 1
-              fi
-            else
-              TAG="${{ github.event.inputs.tag }}"
-            fi
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.tag }}" ]]; then
+            TAG="${{ github.event.inputs.tag }}"
           else
             TAG="${{ github.ref_name }}"
           fi
           echo "tag=$TAG" >> $GITHUB_OUTPUT
           echo "GITHUB_REF_NAME=$TAG" >> $GITHUB_ENV
-      - name: Set tag for push trigger
-        if: github.event_name == 'push'
-        run: |
-          echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
-      - name: Ensure GITHUB_REF_NAME is set
-        run: |
-          if [[ -z "$GITHUB_REF_NAME" ]]; then
-            echo "GITHUB_REF_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
-          fi
       - name: Extract versions
         id: extract_versions
         run: |
           TAG="${{ steps.tag.outputs.tag }}"
-          echo "TAG is $TAG"
-          TAG_NO_V="${TAG#v}"  # Remove leading 'v'
+          TAG_NO_V="${TAG#v}"
           MAJOR_MINOR=$(echo "$TAG_NO_V" | grep -oE '^[0-9]+\.[0-9]+') || true
           FULL_VERSION=$(echo "$TAG_NO_V" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+') || true
           if [[ -z "$MAJOR_MINOR" || -z "$FULL_VERSION" ]]; then
@@ -80,21 +57,14 @@ jobs:
           fi
           echo "MAJOR_MINOR=$MAJOR_MINOR" >> $GITHUB_ENV
           echo "FULL_VERSION=$FULL_VERSION" >> $GITHUB_ENV
-          echo "major_minor=$MAJOR_MINOR" >> $GITHUB_OUTPUT
-          echo "full_version=$FULL_VERSION" >> $GITHUB_OUTPUT
       - name: Check if this major.minor matches the latest GitHub release
         id: is_latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Get the tag name of the latest GitHub release
           LATEST_RELEASE_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
             "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest" | jq -r .tag_name)
-          echo "Latest release tag: $LATEST_RELEASE_TAG"
-          # Extract major.minor from the latest release tag
           LATEST_MAJOR_MINOR=$(echo "$LATEST_RELEASE_TAG" | sed -E 's/^v?([0-9]+\.[0-9]+)\.[0-9]+.*$/\1/')
-          echo "Latest release major.minor: $LATEST_MAJOR_MINOR"
-          echo "Current major.minor: $MAJOR_MINOR"
           if [[ "$MAJOR_MINOR" == "$LATEST_MAJOR_MINOR" ]]; then
             echo "is_latest=true" >> $GITHUB_OUTPUT
           else
