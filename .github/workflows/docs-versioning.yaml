@@ -96,15 +96,18 @@ jobs:
           if [[ "${{ steps.is_latest.outputs.is_latest }}" == "true" ]]; then
             mike deploy \
               --branch main \
+              --deploy-prefix site \
               --push \
               --update-aliases $MAJOR_MINOR latest
             mike set-default \
               --branch main \
+              --deploy-prefix site \
               --push \
               latest
           else
             mike deploy \
               --branch main \
+              --deploy-prefix site \
               --push \
               $MAJOR_MINOR
           fi
