@@ -27,7 +27,8 @@ theme:
 edit_uri: edit/main/site-src/
 plugins:
   - search
-  - mike
+  - mike:
+      alias_type: copy
   - awesome-pages
   - macros:
       j2_line_comment_prefix: "#$"

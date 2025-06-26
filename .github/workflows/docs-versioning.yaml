@@ -30,12 +30,7 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r hack/mkdocs/image/requirements.txt
-
-      - name: Check mike version and path
-        run: |
-          which mike
-          mike --version
-          pip show mike        
+    
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq  
       
@@ -111,20 +106,17 @@ jobs:
             mike deploy \
               --branch main \
               --deploy-prefix site \
-              --alias-type=copy \
               --push \
               --update-aliases $MAJOR_MINOR latest
             mike set-default \
               --branch main \
               --deploy-prefix site \
-              --alias-type=copy \
               --push \
               latest
           else
             mike deploy \
               --branch main \
               --deploy-prefix site \
-              --alias-type=copy \
               --push \
               $MAJOR_MINOR
           fi
